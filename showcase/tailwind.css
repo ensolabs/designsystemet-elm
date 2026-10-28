@@ -1,0 +1,22 @@
+/*
+  The Tailwind entry stylesheet for an app using Designsystemet, and the
+  tested version of the README setup: `bun run tailwind` compiles it and
+  checks that every story looks the same with it on the page.
+
+  The ds CSS itself (`@digdir/designsystemet-css` and its `/theme`) is linked
+  untouched, after this stylesheet.
+*/
+
+/* Preflight in `base`, ds components above it, utilities above both. */
+@layer theme, base, ds, components, utilities;
+@import "tailwindcss";
+/* `inline` keeps utilities following nested data-size and data-color-scheme. */
+@import "@digdir/designsystemet-css/theme/designsystemet.tailwind.css" theme(inline);
+
+/* Preflight removes list markers, and .ds-list relies on the browser's. */
+@layer base {
+  .ds-list,
+  .ds-list :is(ul, ol) {
+    list-style: revert;
+  }
+}

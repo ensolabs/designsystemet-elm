@@ -1,0 +1,68 @@
+{
+  "name": "@ensolabs/designsystemet-elm",
+  "version": "1.23.0",
+  "description": "The JavaScript for designsystemet-elm, the Elm port of Designsystemet: @digdir/designsystemet-web plus open state for dialogs and popovers. The Elm package itself is ensolabs/designsystemet-elm.",
+  "license": "MIT",
+  "keywords": [
+    "elm",
+    "designsystemet",
+    "digdir",
+    "design-system",
+    "web-components"
+  ],
+  "homepage": "https://github.com/ensolabs/designsystemet-elm#readme",
+  "bugs": "https://github.com/ensolabs/designsystemet-elm/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ensolabs/designsystemet-elm.git"
+  },
+  "type": "module",
+  "main": "./js/index.js",
+  "exports": {
+    ".": "./js/index.js"
+  },
+  "files": [
+    "js/",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "make": "elm make --docs=docs.json",
+    "format": "elm-format --yes src tests showcase/src",
+    "format:check": "elm-format --validate src tests showcase/src",
+    "review": "elm-review",
+    "test": "elm-test",
+    "check:version": "bun scripts/check-version.js",
+    "check": "bun run make && bun run format:check && bun run review && bun run review:showcase && bun run test && bun run check:version",
+    "showcase": "bun showcase/build.js --watch",
+    "showcase:build": "bun showcase/build.js",
+    "showcase:icons": "bun showcase/scripts/icons.js",
+    "parity": "bun showcase/parity.js",
+    "review:showcase": "bun showcase/build.js --generate-only && elm-review --elmjson showcase/elm.json --config review",
+    "smoke": "bun showcase/smoke.js",
+    "tailwind": "bun showcase/tailwind.js"
+  },
+  "dependencies": {
+    "@digdir/designsystemet-web": "1.23.0"
+  },
+  "peerDependencies": {
+    "@digdir/designsystemet-css": "1.23.0"
+  },
+  "devDependencies": {
+    "@digdir/designsystemet-css": "1.23.0",
+    "elm": "0.19.3-0",
+    "elm-format": "0.8.8",
+    "elm-review": "^2.13.5",
+    "elm-test": "0.19.3-0",
+    "@navikt/aksel-icons": "^8.16.2",
+    "playwright": "1.56.1",
+    "tailwindcss": "4.3.3"
+  },
+  "trustedDependencies": [
+    "elm",
+    "elm-format"
+  ]
+}

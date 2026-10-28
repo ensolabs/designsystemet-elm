@@ -1,0 +1,8 @@
+{
+  "$comment": "Upstream Storybook stories the showcase deliberately does not port, with the reason. parity.js reports any other upstream story without an Elm twin as missing.",
+  "komponenter-button--colors-hover": "Storybook's pseudo-state plugin simulating :hover on the Colors story; nothing to port.",
+  "komponenter-button--colors-pressed": "Storybook's pseudo-state plugin simulating :active on the Colors story; nothing to port.",
+  "komponenter-search--deprecated-markup": "Hand-written deprecated markup; deprecated upstream APIs are not ported.",
+  "komponenter-suggestion--with-deprecated-del": "Hand-written deprecated markup; deprecated upstream APIs are not ported.",
+  "komponenter-suggestion--custom-matching": "Needs onBeforeMatch, which is not ported for the experimental Suggestion."
+}
