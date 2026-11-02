@@ -97,7 +97,7 @@ media =
             , Paragraph.view []
                 [ Html.text "Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this" ]
             ]
-        , Card.block [] [ Html.img [ Attr.src "/assets/cat1Img.webp", Attr.alt "cute cat 1" ] [] ]
+        , Card.block [] [ Html.img [ Attr.src "assets/cat1Img.webp", Attr.alt "cute cat 1" ] [] ]
         ]
     ]
 
@@ -153,7 +153,7 @@ withLink =
     in
     [ Card.clickable plainLink
         []
-        [ Card.block [] [ Html.img [ Attr.src "/assets/cat5Img.webp", Attr.alt "cute cat 5" ] [] ]
+        [ Card.block [] [ Html.img [ Attr.src "assets/cat5Img.webp", Attr.alt "cute cat 5" ] [] ]
         , Card.block []
             [ Heading.h2 []
                 [ Html.a
@@ -185,7 +185,7 @@ withLink =
                 [ Html.text "Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this" ]
             , Paragraph.view [ Paragraph.size Paragraph.Small ] [ Html.text "Footer text" ]
             ]
-        , Card.block [] [ Html.img [ Attr.src "/assets/cat5Img.webp", Attr.alt "cute cat 5" ] [] ]
+        , Card.block [] [ Html.img [ Attr.src "assets/cat5Img.webp", Attr.alt "cute cat 5" ] [] ]
         ]
     ]
 

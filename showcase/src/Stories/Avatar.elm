@@ -7,7 +7,7 @@ screen reader (`Avatar.Name`) and what it shows (`Avatar.Content`).
 
 Differences from the React stories (they show up in the markup diff):
 
-  - Images are `/assets/cat*.webp` with `alt=""`: an `Avatar.Image` is named
+  - Images are `assets/cat*.webp` with `alt=""`: an `Avatar.Image` is named
     by the avatar, so the picture itself is decorative.
   - InDropdown: the dropdown is a native `popover="auto"` and starts closed.
     React opens it with `open`; Elm can only open a popover from a click on
@@ -107,7 +107,7 @@ radius =
 
 withImage : List (Html msg)
 withImage =
-    [ Avatar.view { name = Label "Ola Nordmann", content = Image "/assets/cat3Img.webp" } [] ]
+    [ Avatar.view { name = Label "Ola Nordmann", content = Image "assets/cat3Img.webp" } [] ]
 
 
 inDropdown : List (Html msg)
@@ -186,5 +186,5 @@ slotAndInitials : List (Html msg)
 slotAndInitials =
     [ Avatar.viewAs Html.button { name = Label "xs", content = Initials "DS" } [ Attr.type_ "button" ]
     , Avatar.viewAs Html.button { name = Label "xs", content = Initials "0" } [ Attr.type_ "button" ]
-    , Avatar.viewAs Html.button { name = Label "xs", content = Image "/assets/cat3Img.webp" } [ Attr.type_ "button" ]
+    , Avatar.viewAs Html.button { name = Label "xs", content = Image "assets/cat3Img.webp" } [ Attr.type_ "button" ]
     ]

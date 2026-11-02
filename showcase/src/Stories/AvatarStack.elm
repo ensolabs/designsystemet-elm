@@ -11,7 +11,7 @@ Differences from the React stories (they show up in the markup diff):
   - React styles `section`, `fieldset` and `legend` with a global `<style>`;
     here the same styles are inline on the `section` and
     `fieldset` helpers, so they don't leak into the rest of the page.
-  - Images are `/assets/cat*.webp` with `alt=""`.
+  - Images are `assets/cat*.webp` with `alt=""`.
   - WithTooltip: React's `<Tooltip>` writes its default `data-placement="top"`
     and `data-autoplacement="true"`; a `Tooltip` name leaves them out, which
     means the same.
@@ -105,7 +105,7 @@ preview : List (Html msg)
 preview =
     [ AvatarStack.new
         |> AvatarStack.view [ Attr.attribute "aria-label" "Test av aria label" ]
-            [ Avatar.view { name = Label "Navn", content = Image "/assets/cat1Img.webp" } []
+            [ Avatar.view { name = Label "Navn", content = Image "assets/cat1Img.webp" } []
             , Avatar.view { name = Label "Navn", content = Icon (Icons.briefcase []) } []
             , Avatar.view { name = Label "Navn", content = Initials "md" } []
             ]
@@ -117,10 +117,10 @@ expandable =
     let
         profiles : List (Html msg)
         profiles =
-            [ Avatar.view { name = Label "profile picture a", content = Image "/assets/cat1Img.webp" } []
-            , Avatar.view { name = Label "profile picture b", content = Image "/assets/cat1Img.webp" } []
-            , Avatar.view { name = Label "profile picture c", content = Image "/assets/cat3Img.webp" } []
-            , Avatar.view { name = Label "profile picture d", content = Image "/assets/cat4Img.webp" } []
+            [ Avatar.view { name = Label "profile picture a", content = Image "assets/cat1Img.webp" } []
+            , Avatar.view { name = Label "profile picture b", content = Image "assets/cat1Img.webp" } []
+            , Avatar.view { name = Label "profile picture c", content = Image "assets/cat3Img.webp" } []
+            , Avatar.view { name = Label "profile picture d", content = Image "assets/cat4Img.webp" } []
             ]
     in
     [ section
@@ -137,9 +137,9 @@ expandable =
         , legendFieldset "default"
             [ AvatarStack.new
                 |> AvatarStack.view [ Attr.attribute "aria-label" "Test av aria label" ]
-                    [ Avatar.view { name = Label "Navn", content = Image "/assets/cat1Img.webp" } []
-                    , Avatar.view { name = Label "Navn", content = Image "/assets/cat1Img.webp" } []
-                    , Avatar.view { name = Label "Navn", content = Image "/assets/cat3Img.webp" } []
+                    [ Avatar.view { name = Label "Navn", content = Image "assets/cat1Img.webp" } []
+                    , Avatar.view { name = Label "Navn", content = Image "assets/cat1Img.webp" } []
+                    , Avatar.view { name = Label "Navn", content = Image "assets/cat3Img.webp" } []
                     ]
             ]
         ]
@@ -153,7 +153,7 @@ dataSize =
         stack attributes initials =
             AvatarStack.new
                 |> AvatarStack.view (Attr.attribute "aria-label" "Test av aria label" :: attributes)
-                    [ Avatar.view { name = Label "Navn", content = Image "/assets/cat5Img.webp" } []
+                    [ Avatar.view { name = Label "Navn", content = Image "assets/cat5Img.webp" } []
                     , Avatar.view { name = Label "Navn", content = Icon (Icons.briefcase []) } []
                     , Avatar.view { name = Label "Navn", content = Initials initials } []
                     ]
@@ -180,10 +180,10 @@ radius =
             , Attr.attribute "style" "--dsc-avatar-stack-radius: var(--ds-border-radius-sm)"
             ]
             [ Avatar.view { name = Label "variant square", content = Placeholder } []
-            , Avatar.view { name = Label "Ola Nordmann", content = Image "/assets/cat5Img.webp" } []
-            , Avatar.view { name = Label "Ola Nordmann", content = Image "/assets/cat1Img.webp" } []
-            , Avatar.view { name = Label "Ola Nordmann", content = Image "/assets/cat5Img.webp" } []
-            , Avatar.view { name = Label "Ola Nordmann", content = Image "/assets/cat5Img.webp" } []
+            , Avatar.view { name = Label "Ola Nordmann", content = Image "assets/cat5Img.webp" } []
+            , Avatar.view { name = Label "Ola Nordmann", content = Image "assets/cat1Img.webp" } []
+            , Avatar.view { name = Label "Ola Nordmann", content = Image "assets/cat5Img.webp" } []
+            , Avatar.view { name = Label "Ola Nordmann", content = Image "assets/cat5Img.webp" } []
             ]
     ]
 
@@ -198,19 +198,19 @@ withTooltip =
             [ AvatarStack.new
                 |> AvatarStack.withExpand AvatarStack.ReserveSpace
                 |> AvatarStack.view [ Attr.attribute "aria-label" "Test av aria label" ]
-                    [ Avatar.view { name = Tooltip "Ola Nordmann", content = Image "/assets/cat1Img.webp" } []
-                    , Avatar.view { name = Tooltip "Kari Nordmann", content = Image "/assets/cat5Img.webp" } []
+                    [ Avatar.view { name = Tooltip "Ola Nordmann", content = Image "assets/cat1Img.webp" } []
+                    , Avatar.view { name = Tooltip "Kari Nordmann", content = Image "assets/cat5Img.webp" } []
                     , Avatar.view { name = Tooltip "Person 2", content = Initials "Hei" } []
-                    , Avatar.view { name = Tooltip "Person 3", content = Image "/assets/cat5Img.webp" } []
+                    , Avatar.view { name = Tooltip "Person 3", content = Image "assets/cat5Img.webp" } []
                     ]
             ]
         , legendFieldset "not expandable"
             [ AvatarStack.new
                 |> AvatarStack.view [ Attr.attribute "aria-label" "Test av aria label" ]
-                    [ Avatar.view { name = Tooltip "Ola Nordmann", content = Image "/assets/cat1Img.webp" } []
-                    , Avatar.view { name = Tooltip "Kari Nordmann", content = Image "/assets/cat5Img.webp" } []
-                    , Avatar.view { name = Tooltip "Person 2", content = Image "/assets/cat5Img.webp" } []
-                    , Avatar.view { name = Tooltip "Person 3", content = Image "/assets/cat5Img.webp" } []
+                    [ Avatar.view { name = Tooltip "Ola Nordmann", content = Image "assets/cat1Img.webp" } []
+                    , Avatar.view { name = Tooltip "Kari Nordmann", content = Image "assets/cat5Img.webp" } []
+                    , Avatar.view { name = Tooltip "Person 2", content = Image "assets/cat5Img.webp" } []
+                    , Avatar.view { name = Tooltip "Person 3", content = Image "assets/cat5Img.webp" } []
                     ]
             ]
         ]
@@ -224,18 +224,18 @@ withTooltipAndLink =
             [ AvatarStack.new
                 |> AvatarStack.withExpand AvatarStack.ReserveSpace
                 |> AvatarStack.view [ Attr.attribute "aria-label" "Test av aria label" ]
-                    [ Avatar.viewAs Html.a { name = Label "profile picture a", content = Image "/assets/cat1Img.webp" } [ Attr.href "#" ]
-                    , Avatar.viewAs Html.a { name = Label "profile picture b", content = Image "/assets/cat1Img.webp" } [ Attr.href "#" ]
-                    , Avatar.viewAs Html.a { name = Label "profile picture c", content = Image "/assets/cat3Img.webp" } [ Attr.href "#" ]
-                    , Avatar.viewAs Html.a { name = Label "profile picture d", content = Image "/assets/cat4Img.webp" } [ Attr.href "#" ]
+                    [ Avatar.viewAs Html.a { name = Label "profile picture a", content = Image "assets/cat1Img.webp" } [ Attr.href "#" ]
+                    , Avatar.viewAs Html.a { name = Label "profile picture b", content = Image "assets/cat1Img.webp" } [ Attr.href "#" ]
+                    , Avatar.viewAs Html.a { name = Label "profile picture c", content = Image "assets/cat3Img.webp" } [ Attr.href "#" ]
+                    , Avatar.viewAs Html.a { name = Label "profile picture d", content = Image "assets/cat4Img.webp" } [ Attr.href "#" ]
                     ]
             ]
         , legendFieldset "Link + Tooltip"
             [ AvatarStack.new
                 |> AvatarStack.view [ Attr.attribute "aria-label" "Test av aria label" ]
-                    [ Avatar.viewAs Html.a { name = Tooltip "Ola Nordmann", content = Image "/assets/cat1Img.webp" } [ Attr.href "#" ]
-                    , Avatar.viewAs Html.a { name = Tooltip "Kari Nordmann", content = Image "/assets/cat4Img.webp" } [ Attr.href "#" ]
-                    , Avatar.viewAs Html.a { name = Tooltip "Person 2", content = Image "/assets/cat3Img.webp" } [ Attr.href "#" ]
+                    [ Avatar.viewAs Html.a { name = Tooltip "Ola Nordmann", content = Image "assets/cat1Img.webp" } [ Attr.href "#" ]
+                    , Avatar.viewAs Html.a { name = Tooltip "Kari Nordmann", content = Image "assets/cat4Img.webp" } [ Attr.href "#" ]
+                    , Avatar.viewAs Html.a { name = Tooltip "Person 2", content = Image "assets/cat3Img.webp" } [ Attr.href "#" ]
                     , Avatar.viewAs Html.a { name = Tooltip "Person 3", content = Initials "BR" } [ Attr.href "#" ]
                     ]
             ]
@@ -299,11 +299,11 @@ playground model =
                     ]
                 )
             ]
-            [ Avatar.view { name = Label "profile a", content = Image "/assets/cat1Img.webp" } []
-            , Avatar.view { name = Label "profile b", content = Image "/assets/cat5Img.webp" } []
+            [ Avatar.view { name = Label "profile a", content = Image "assets/cat1Img.webp" } []
+            , Avatar.view { name = Label "profile b", content = Image "assets/cat5Img.webp" } []
             , Avatar.view { name = Label "profile c", content = Initials "md" } []
-            , Avatar.view { name = Label "profile d", content = Image "/assets/cat5Img.webp" } []
-            , Avatar.view { name = Label "profile e", content = Image "/assets/cat1Img.webp" } []
+            , Avatar.view { name = Label "profile d", content = Image "assets/cat5Img.webp" } []
+            , Avatar.view { name = Label "profile e", content = Image "assets/cat1Img.webp" } []
             ]
     ]
 
